@@ -74,6 +74,9 @@ public class TestController : MonoBehaviour
             canMove = true;
             
             StartCoroutine(MoveStilts());
+
+            canMove = false;
+            
             // // stilt2.bodyType=RigidbodyType2D.Static;
             // Vector2 stiltPosition = stilt.position;
             // Vector2 characterPosition = character.position;
