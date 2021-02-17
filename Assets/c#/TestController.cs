@@ -12,6 +12,7 @@ public class TestController : MonoBehaviour
     public bool canMove = false;
     private bool rightLeft = true;
 
+
     public Rigidbody2D stilt
     {
         get
@@ -45,7 +46,7 @@ public class TestController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Physics2D.IgnoreCollision(lrb.GetComponent<Collider2D>(), rrb.GetComponent<Collider2D>());
     }
 
     // Update is called once per frame
@@ -63,6 +64,11 @@ public class TestController : MonoBehaviour
         // Vector2 position = rb.position;
         // position += moveVector * speed * Time.deltaTime;
         // rb.MovePosition(position);
+
+        Vector2 fixedCharacterPosition = (stilt.position + stilt2.position) / 2;
+        fixedCharacterPosition.x = character.position.x;
+        fixedCharacterPosition.y += 7;
+        character.MovePosition(fixedCharacterPosition);
 
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
         {   
@@ -105,7 +111,9 @@ public class TestController : MonoBehaviour
             stilt.position += Vector2.right * speedX * Time.fixedDeltaTime;
             stilt.position += Vector2.up * speedY * Time.fixedDeltaTime;
             Vector2 characterPosition = (stilt.position + stilt2.position) / 2;
-            characterPosition.y = character.position.y;
+
+            characterPosition.y += 7;
+
             character.MovePosition(characterPosition);
             // character.position += Vector2.up * speedY * Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();
