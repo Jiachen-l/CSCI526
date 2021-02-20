@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TestController : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class TestController : MonoBehaviour
     private float speedY = 2f;
     public bool canMove = false;
     private bool rightLeft = true;
+    public GameObject gameOverMenu;
+    private Rigidbody2D originalL;
+    private Rigidbody2D originalR;
+    private Vector2 originalPositionL;
+    private Vector2 originalPositionR;
+    private Vector2 originalPosition;
 
 
     public Rigidbody2D stilt
@@ -47,6 +54,15 @@ public class TestController : MonoBehaviour
     void Start()
     {
         Physics2D.IgnoreCollision(lrb.GetComponent<Collider2D>(), rrb.GetComponent<Collider2D>());
+        originalPosition = character.position;
+        originalL = lrb;
+        originalR = rrb;
+        originalPositionL = lrb.position;
+        originalPositionR = rrb.position;
+        Debug.Log(originalPosition.x + "," + originalPosition.y);
+        Debug.Log(character.transform.position.x + "," + character.transform.position.y);
+
+
     }
 
     // Update is called once per frame
@@ -119,5 +135,15 @@ public class TestController : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         
+    }
+
+    public void gameover() {
+        gameOverMenu.SetActive(true);
+        // Time.timeScale = 0f;
+        // originalL.MovePosition(originalPositionL);
+        // originalR.MovePosition(originalPositionR);
+        // character.MovePosition(originalPosition);
+        // Debug.Log(character.transform.position.x + "," + character.transform.position.y);
+
     }
 }
