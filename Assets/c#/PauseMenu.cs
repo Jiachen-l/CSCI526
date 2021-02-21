@@ -9,28 +9,28 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    public GameObject pauseButton;
+
+    public GameObject retryButton;
+
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
 
-        	if (GameIsPaused) {
-        		Resume();
-        	}
-        	else {
-        		Pause();
-        	}
-        }
     }
 
     public void Resume() {
+        retryButton.SetActive(true);
+        pauseButton.SetActive(true);
     	pauseMenuUI.SetActive(false);
     	Time.timeScale = 1f;
     	GameIsPaused = false;
     }
 
-    void Pause() {
+    public void Pause() {
+        retryButton.SetActive(false);
+        pauseButton.SetActive(false);
     	pauseMenuUI.SetActive(true);
     	Time.timeScale = 0f;
     	GameIsPaused = true;
@@ -45,4 +45,8 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Quit Game...");
         Application.Quit();
     }
+
+    public void Retry() {
+        SceneManager.LoadScene("level1");    
+        }
 }
