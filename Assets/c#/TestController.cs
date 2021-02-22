@@ -83,7 +83,7 @@ public class TestController : MonoBehaviour
 
         Vector2 fixedCharacterPosition = (stilt.position + stilt2.position) / 2;
         fixedCharacterPosition.x = character.position.x;
-        fixedCharacterPosition.y += 7;
+        fixedCharacterPosition.y += 4.9f;
         character.MovePosition(fixedCharacterPosition);
 
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
@@ -128,7 +128,7 @@ public class TestController : MonoBehaviour
             stilt.position += Vector2.up * speedY * Time.fixedDeltaTime;
             Vector2 characterPosition = (stilt.position + stilt2.position) / 2;
 
-            characterPosition.y += 7;
+            characterPosition.y += 4.9f;
 
             character.MovePosition(characterPosition);
             // character.position += Vector2.up * speedY * Time.fixedDeltaTime;
