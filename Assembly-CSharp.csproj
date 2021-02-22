@@ -58,9 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Obstacles 1\Barrier\Soccer.cs" />
      <Compile Include="Assets\Obstacles 1\Barrier\Soccer\Soccer.cs" />
-     <Compile Include="Assets\Obstacles 1\Barrier\SoccerGround.cs" />
      <Compile Include="Assets\Obstacles 1\Player\Player.cs" />
      <Compile Include="Assets\Obstacles 1\crocodile\crocoAnimations.cs" />
      <Compile Include="Assets\c#\CameraColtroller.cs" />
@@ -68,6 +66,7 @@
      <Compile Include="Assets\c#\GameOverController.cs" />
      <Compile Include="Assets\c#\MainMenu.cs" />
      <Compile Include="Assets\c#\PauseMenu.cs" />
+     <Compile Include="Assets\c#\SoccerGround.cs" />
      <Compile Include="Assets\c#\TestController.cs" />
      <Compile Include="Assets\c#\soccerMove.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
