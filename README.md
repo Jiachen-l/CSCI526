@@ -1,1 +1,1 @@
-# CSCI526
+# CSCI_526_Game
