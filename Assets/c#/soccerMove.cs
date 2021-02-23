@@ -7,7 +7,7 @@ public class soccerMove : MonoBehaviour
 
     public float speed = 3;
 
-    private float changeDirectionTime = 2f;//time to change direction
+    private float changeDirectionTime = 0f;//time to change direction
 
     public float changeTimer;
 
@@ -28,6 +28,8 @@ public class soccerMove : MonoBehaviour
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
+
+        changeDirectionTime = 100 * Time.deltaTime;
         
         moveDirection = isVertical ? Vector2.up : Vector2.right;
 

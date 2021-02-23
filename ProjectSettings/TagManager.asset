@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Stilt
+  - Ground
   layers:
   - Default
   - TransparentFX
