@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    public GameObject helpUI;
+
     public GameObject pauseButton;
 
     public GameObject retryButton;
@@ -48,5 +50,15 @@ public class PauseMenu : MonoBehaviour
 
     public void Retry() {
         SceneManager.LoadScene("level1");    
-        }
+    }
+
+    public void showHelp() {
+        helpUI.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void hideHelp() {
+        helpUI.SetActive(false);
+        Time.timeScale = 1f;
+    }
 }
