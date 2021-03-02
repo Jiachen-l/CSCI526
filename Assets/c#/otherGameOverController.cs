@@ -53,7 +53,6 @@ public class otherGameOverController : MonoBehaviour
                 GameObject.Find("bone_4").transform.position = checkPoints[i].transform.position;
             }
 
->>>>>>> checkpoint
         }
     }
 }
