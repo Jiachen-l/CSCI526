@@ -10,6 +10,8 @@ public class otherGameOverController : MonoBehaviour
     public GameObject pauseButton;
 
     public GameObject retryButton;
+
+    public GameObject helpButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,7 @@ public class otherGameOverController : MonoBehaviour
             gameOverMenu.SetActive(true);
             retryButton.SetActive(false);
             pauseButton.SetActive(false);
+            helpButton.SetActive(false);
         }
     }
 }

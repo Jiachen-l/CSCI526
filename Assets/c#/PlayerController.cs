@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+        // Debug.Log("isGround: " + isGrounded);
         if (moveInput > 0)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);

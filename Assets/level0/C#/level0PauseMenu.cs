@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+public class level0PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
 
@@ -25,6 +25,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Resume() {
+        Debug.Log("button press");
         retryButton.SetActive(true);
         pauseButton.SetActive(true);
         helpButton.SetActive(true);
@@ -53,8 +54,8 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Retry() {
-        Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name); 
+        Scene scene = SceneManager.GetActiveScene(); 
+        SceneManager.LoadScene(scene.name);  
     }
 
     public void showHelp() {

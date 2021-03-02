@@ -315,13 +315,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 3
+  jumpForce: 10
   feetPos: {fileID: 2025859844}
   checkRadius: 0.3
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  jumpTime: 0
+  jumpTime: 2
 --- !u!61 &238482718
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -363,7 +363,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1102,7 +1102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 10
+  jumpForce: 100
   feetPos: {fileID: 1393523607}
   checkRadius: 0.3
   whatIsGround:
