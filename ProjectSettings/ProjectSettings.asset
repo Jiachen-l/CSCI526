@@ -632,10 +632,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: b0fb77cd-ae74-4c4d-bb06-42a7d17231f0
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: TestIK (1)
+  organizationId: jli74121
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

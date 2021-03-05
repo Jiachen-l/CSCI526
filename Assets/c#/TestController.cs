@@ -75,7 +75,7 @@ public class TestController : MonoBehaviour
 
         Vector2 fixedCharacterPosition = (stilt.position + stilt2.position) / 2;
         fixedCharacterPosition.x = character.position.x;
-        fixedCharacterPosition.y += 4.9f;
+        fixedCharacterPosition.y += 2.1f;
         character.MovePosition(fixedCharacterPosition);
 
         float distance = Mathf.Abs(rrb.transform.position.x - lrb.transform.position.x);
@@ -126,7 +126,7 @@ public class TestController : MonoBehaviour
             stilt.position += Vector2.up * speedY * Time.fixedDeltaTime;
             Vector2 characterPosition = (stilt.position + stilt2.position) / 2;
 
-            characterPosition.y += 4.9f;
+            characterPosition.y += 2.1f;
 
             character.MovePosition(characterPosition);
             // character.position += Vector2.up * speedY * Time.fixedDeltaTime;

@@ -14,11 +14,15 @@ public class GameOverController : MonoBehaviour
 
     public GameObject helpButton;
 
+
     public void Resume() {
+        Debug.Log("retry Time:" + ApplicationData.levelTryTime);
         retryButton.SetActive(true);
         pauseButton.SetActive(true);
         helpButton.SetActive(true);
         Scene scene = SceneManager.GetActiveScene(); 
+        ApplicationData.levelTryTime++;
+
         SceneManager.LoadScene(scene.name);
     }
 
