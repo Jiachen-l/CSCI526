@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class ApplicationData
 {
+	//record the start time of this level
 	static public float levelStartTime = Time.time;
+
+	//record the time player used to pass this level
 	static public float TimeToPassLevel;
 
-	// static public float level1StartTime = Time.time;
-	// static public float TimeToPassLevel1;
-
+	//record try time the player used to pass this level
 	static public int levelTryTime = 0;
 
+	//record the time the player fall into gap and loss
 	static public int TimeFallIntoGap = 0;
 
+	//record the time the player hit the obstacle
 	static public int TimeHitObstacle = 0;
-	// static public int level1TryTime = 0;
+
+	//record the coins this player has
+	static public int coins = 0;
 
 }
