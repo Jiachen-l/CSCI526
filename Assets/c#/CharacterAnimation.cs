@@ -18,6 +18,7 @@ public class CharacterAnimation : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
         {
             anim.SetBool("isWalking", true);
+            // Debug.Log("left or right down");
         }
         else
         {
