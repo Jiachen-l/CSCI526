@@ -33,6 +33,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (DroppedBridge.onDroppedBridge)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.AddForce(Vector2.up*4, ForceMode2D.Impulse);
+                Debug.Log("add force");
+            }
+        }
+        
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
         // Debug.Log("isGround: " + isGrounded);
         if (moveInput > 0)
@@ -46,13 +55,13 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = true;
             jumpTimeCounter = jumpTime;
-            rb.velocity = Vector2.up * jumpForce;
+            rb.velocity = Vector2.up*1.2f * jumpForce;
         }
         if (Input.GetKey(KeyCode.Space)&&isJumping==true)
         {
             if (jumpTimeCounter > 0)
             {
-                rb.velocity = Vector2.up * jumpForce;
+                rb.velocity = Vector2.up *1.2f * jumpForce;
                 jumpTimeCounter -= Time.deltaTime;
             }
             else
