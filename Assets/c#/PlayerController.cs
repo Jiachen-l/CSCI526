@@ -40,6 +40,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (DroppedBridge.onDroppedBridge)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.AddForce(Vector2.up*5, ForceMode2D.Impulse);
+            }
+        }
         if (purplePotionEffective > 0) {
             Debug.Log("test:" + purplePotionEffective);
             jumpForce = oldJumpForce + 5;
