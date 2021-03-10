@@ -69,13 +69,13 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = true;
             jumpTimeCounter = jumpTime;
-            rb.velocity = Vector2.up * jumpForce;
+            rb.velocity = Vector2.up*1.1f * jumpForce;
         }
         if (Input.GetKey(KeyCode.Space)&&isJumping==true)
         {
             if (jumpTimeCounter > 0)
             {
-                rb.velocity = Vector2.up * jumpForce;
+                rb.velocity = 1.1f*Vector2.up * jumpForce;
                 jumpTimeCounter -= Time.deltaTime;
             }
             else
