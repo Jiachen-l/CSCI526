@@ -1376,6 +1376,7 @@ MonoBehaviour:
   speed: 3
   changeTimer: 2
   isVertical: 0
+  player: {fileID: 0}
 --- !u!212 &1027473101
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1932,6 +1933,7 @@ MonoBehaviour:
   speed: 3
   changeTimer: 2
   isVertical: 0
+  player: {fileID: 0}
 --- !u!212 &1366113074
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2082,6 +2084,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2868939492673647266, guid: d91b17e3452214475896849d35337bf5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d91b17e3452214475896849d35337bf5, type: 3}
+--- !u!50 &1535430568 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 8765050447280280256, guid: 281e558f51625442392a66f664bf1c3c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8765050446340540455}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1609505441 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5423335436552104581, guid: dc9b7d11229144203a359643ce1772ed,
@@ -2625,8 +2633,9 @@ GameObject:
   - component: {fileID: 1963092225}
   - component: {fileID: 1963092224}
   - component: {fileID: 1963092223}
-  - component: {fileID: 1963092222}
   - component: {fileID: 1963092221}
+  - component: {fileID: 1963092222}
+  - component: {fileID: 1963092226}
   m_Layer: 8
   m_Name: movable wood bridge4
   m_TagString: Untagged
@@ -2644,10 +2653,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.49936515}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2658,7 +2667,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.013833165}
   m_EdgeRadius: 0
 --- !u!50 &1963092222
 Rigidbody2D:
@@ -2696,6 +2705,7 @@ MonoBehaviour:
   speed: 3
   changeTimer: 2
   isVertical: 1
+  player: {fileID: 1535430568}
 --- !u!212 &1963092224
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2754,12 +2764,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963092220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.58, y: -1.4, z: 0}
+  m_LocalPosition: {x: 32.86, y: -0.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1963092226
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963092220}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.003621459}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.9927571}
+  m_EdgeRadius: 0
 --- !u!1 &2024331927
 GameObject:
   m_ObjectHideFlags: 0
@@ -2795,6 +2831,7 @@ MonoBehaviour:
   speed: 3
   changeTimer: 2
   isVertical: 0
+  player: {fileID: 0}
 --- !u!212 &2024331929
 SpriteRenderer:
   m_ObjectHideFlags: 0
