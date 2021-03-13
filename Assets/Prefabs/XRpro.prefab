@@ -259,9 +259,9 @@ GameObject:
   - component: {fileID: 8765050447280280270}
   - component: {fileID: 8765050447280280271}
   - component: {fileID: 8765050447280280256}
-  - component: {fileID: 8765050447280280257}
   - component: {fileID: 8765050447280280258}
   - component: {fileID: 8765050447280280267}
+  - component: {fileID: 2100052300}
   m_Layer: 0
   m_Name: XRpro
   m_TagString: Untagged
@@ -333,13 +333,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 10
   feetPos: {fileID: 8765050447591468410}
   checkRadius: 0.3
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
   jumpTime: 0
+  jumpForce: 10
+  purplePotionEffective: 0
 --- !u!50 &8765050447280280256
 Rigidbody2D:
   serializedVersion: 4
@@ -361,32 +362,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &8765050447280280257
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8765050447280280259}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: e3397a2b8ead64716909882111f58281, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.83410466, y: -1.942169}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.6682093, y: 3.743177}
-  m_EdgeRadius: 0
 --- !u!114 &8765050447280280258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,7 +393,28 @@ MonoBehaviour:
   retryButton: {fileID: 0}
   pauseButton: {fileID: 0}
   helpButton: {fileID: 0}
-  tryTime: 0
+--- !u!68 &2100052300
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8765050447280280259}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: a663b08dab13a4cc3a58bb9e970876db, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.4658656, y: -0.083265305}
+  - {x: -2.1495755, y: -0.06858615}
+  - {x: -1.728023, y: -2.8947651}
+  - {x: -0.6184642, y: -3.8000195}
+  - {x: 0.24496707, y: -2.864292}
+  - {x: 0.48334885, y: 0}
 --- !u!1 &8765050447489605683
 GameObject:
   m_ObjectHideFlags: 0
