@@ -3674,6 +3674,7 @@ MonoBehaviour:
   - {fileID: 2100052297}
   - {fileID: 654722449}
   characterIndex: 0
+  changeCharacterActive: 0
 --- !u!4 &68176608
 Transform:
   m_ObjectHideFlags: 0
@@ -5374,7 +5375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target1: {fileID: 1154345343}
-  target2: {fileID: 654722451}
+  target2: {fileID: 1154345343}
 --- !u!1 &454719293 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5423335434825262572, guid: dc9b7d11229144203a359643ce1772ed,
@@ -10502,7 +10503,9 @@ GameObject:
   - component: {fileID: 1738953281}
   - component: {fileID: 1738953284}
   - component: {fileID: 1738953283}
+  - component: {fileID: 1738953286}
   - component: {fileID: 1738953282}
+  - component: {fileID: 1738953285}
   m_Layer: 8
   m_Name: ChangeCharacterTilemap
   m_TagString: Untagged
@@ -10672,6 +10675,39 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1738953285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738953280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c296040dea5946679e25cfb98e535b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &1738953286
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738953280}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1771073608
 GameObject:
   m_ObjectHideFlags: 0
