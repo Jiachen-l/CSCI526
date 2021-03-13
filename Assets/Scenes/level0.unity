@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d145bf6654fcebd4089acae5bdcd0952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
+  text: {fileID: 562450833}
 --- !u!4 &236486797
 Transform:
   m_ObjectHideFlags: 0
@@ -815,6 +815,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &562450833 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7675910772395190110, guid: dc9b7d11229144203a359643ce1772ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 5423335435429933092}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &605722056 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5423335434825262572, guid: dc9b7d11229144203a359643ce1772ed,
