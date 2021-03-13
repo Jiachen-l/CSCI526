@@ -44,7 +44,7 @@ public class LoseOrWinController : MonoBehaviour
         AnalyticsResult ana = Analytics.CustomEvent(
             scene.name,
             new Dictionary<string, object> {
-                {"positionPlayerDie", name}
+                {"positionPlayerDieOrHurt", name}
             }
         );        
     }
