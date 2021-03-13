@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TestController : MonoBehaviour
 {
+    public GameObject stiltMan;
     public Rigidbody2D lrb;
     public Rigidbody2D rrb;
     public Rigidbody2D character;
@@ -78,6 +79,10 @@ public class TestController : MonoBehaviour
         fixedCharacterPosition.x = character.position.x;
         fixedCharacterPosition.y += characterHeight;
         character.MovePosition(fixedCharacterPosition);
+        // move stilt man position to center of two stilts
+        // Debug.Log("left stilt position: " + stilt.position);    
+        // Debug.Log("right stilt position: " + stilt2.position);
+        // Debug.Log("stilt man position: " + stiltMan.transform.position);
 
         float distance = Mathf.Abs(rrb.transform.position.x - lrb.transform.position.x);
 
@@ -112,6 +117,11 @@ public class TestController : MonoBehaviour
             canMove = false;
             rightLeft = rrb.position.x < lrb.position.x;
         }
+
+        // Debug.Log("left stilt position: " + stilt.position);    
+        // Debug.Log("right stilt position: " + stilt2.position);
+        Debug.Log("stilt man position: " + stiltMan.transform.position);
+
     }
 
     private IEnumerator MoveStilts()
