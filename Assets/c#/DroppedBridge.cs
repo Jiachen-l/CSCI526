@@ -19,7 +19,7 @@ public class DroppedBridge : MonoBehaviour
     {
         // player.gravityScale = 1;
         onDroppedBridge = true;
-        rbody.velocity = Vector2.down*0.6f;
+        rbody.velocity = Vector2.down*0.8f;
         rbody.gravityScale = 0;
     }
 
