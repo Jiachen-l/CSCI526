@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 
 public class GameOverController : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class GameOverController : MonoBehaviour
         helpButton.SetActive(true);
         Scene scene = SceneManager.GetActiveScene(); 
         ApplicationData.levelTryTime++;
+        ApplicationData.coinsGetThisLevel = 0;
 
         SceneManager.LoadScene(scene.name);
     }
@@ -32,6 +34,14 @@ public class GameOverController : MonoBehaviour
     }
 
     public void QuitGame() {
+        Scene scene = SceneManager.GetActiveScene(); 
+        AnalyticsResult ana = Analytics.CustomEvent(
+            "playerQuitAnalytics",
+            new Dictionary<string, object> {
+                {"timePlayerSpendInThisGame", Time.time},
+                {"levelPlayerQuitThisGame", scene.name}
+            }
+        );           
         Debug.Log("Quit Game...");
         Application.Quit();
     }

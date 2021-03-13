@@ -13,12 +13,12 @@ public class MainMenu : MonoBehaviour
     public void QuitGame() {
     	Scene scene = SceneManager.GetActiveScene();
         AnalyticsResult ana = Analytics.CustomEvent(
-            scene.name,
+            "playerQuitAnalytics",
             new Dictionary<string, object> {
-                {"PlayerPlayTime", Time.time},
-                {"LevelPlayerStop", scene.name}
+                {"timePlayerSpendInThisGame", Time.time},
+                {"levelPlayerQuitThisGame", scene.name}
             }
-        );         	
+        );        	
         Debug.Log("Quit!");
         Application.Quit();
     }

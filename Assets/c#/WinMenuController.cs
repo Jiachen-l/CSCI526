@@ -28,6 +28,7 @@ public class WinMenuController : MonoBehaviour
         ApplicationData.TimeFallIntoGap = 0;
         ApplicationData.levelTryTime = 1;
         ApplicationData.levelStartTime = Time.time;
+        ApplicationData.coinsGetThisLevel = 0;
 
         retryButton.SetActive(true);
         pauseButton.SetActive(true);
@@ -44,10 +45,10 @@ public class WinMenuController : MonoBehaviour
     public void QuitGame() {
 
         AnalyticsResult ana = Analytics.CustomEvent(
-            scene.name,
+            "playerQuitAnalytics",
             new Dictionary<string, object> {
-                {"PlayerPlayTime", Time.time},
-                {"LevelPlayerStop", scene.name}
+                {"timePlayerSpendInThisGame", Time.time},
+                {"levelPlayerQuitThisGame", scene.name}
             }
         );        
         Debug.Log("Quit Game...");
@@ -60,6 +61,8 @@ public class WinMenuController : MonoBehaviour
         ApplicationData.TimeFallIntoGap = 0;
         ApplicationData.levelTryTime = 1;
         ApplicationData.levelStartTime = Time.time;
+        ApplicationData.coins += ApplicationData.coinsGetThisLevel;
+        ApplicationData.coinsGetThisLevel = 0;
 
     	SceneManager.LoadScene(scene.buildIndex + 1);
     }

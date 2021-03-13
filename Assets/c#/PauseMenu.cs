@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -44,7 +45,14 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void QuitGame() {
-        Debug.Log("Quit Game...");
+        Scene scene = SceneManager.GetActiveScene(); 
+        AnalyticsResult ana = Analytics.CustomEvent(
+            "playerQuitAnalytics",
+            new Dictionary<string, object> {
+                {"timePlayerSpendInThisGame", Time.time},
+                {"levelPlayerQuitThisGame", scene.name}
+            }
+        );       
         Application.Quit();
     }
 

@@ -11,16 +11,9 @@ public class LoseOrWinController : MonoBehaviour
 	public GameObject retryButton;
 	public GameObject pauseButton;
 	public GameObject helpButton;
-    private bool isGameOver = false;
 
     void Update() {
-        if (!isGameOver) {
-            if (this.gameObject.transform.position.y < -20) {
-                isGameOver = true;
-                loss();
-                ApplicationData.TimeFallIntoGap++;
-            }
-        }
+
     }
 
 
@@ -29,19 +22,31 @@ public class LoseOrWinController : MonoBehaviour
 
         if (other.gameObject.GetComponent<LoseCondition>() != null) {
             ApplicationData.TimeHitObstacle++;
-            loss();
+            loss(other.gameObject.name);
         }
 
         if (other.gameObject.GetComponent<WinCondition>() != null) {
             win();
         }
+
+        if (other.gameObject.GetComponent<GapCondition>() != null) {
+            ApplicationData.TimeFallIntoGap++;
+            loss(other.gameObject.name);
+        }
     }
 
-    void loss() {
+    void loss(string name) {
+        Scene scene = SceneManager.GetActiveScene(); 
         gameOverMenu.SetActive(true);
         retryButton.SetActive(false);
         pauseButton.SetActive(false);
         helpButton.SetActive(false); 
+        AnalyticsResult ana = Analytics.CustomEvent(
+            scene.name,
+            new Dictionary<string, object> {
+                {"positionPlayerDie", name}
+            }
+        );        
     }
 
     void win() {
@@ -50,10 +55,11 @@ public class LoseOrWinController : MonoBehaviour
         AnalyticsResult ana = Analytics.CustomEvent(
             scene.name,
             new Dictionary<string, object> {
-                {"TimeToPassLevel0", ApplicationData.TimeToPassLevel},
-                {"TryTimeToPassLevel0", ApplicationData.levelTryTime},
-                {"TimeFallIntoGap", ApplicationData.TimeFallIntoGap},
-                {"TimeHitObstacle", ApplicationData.TimeHitObstacle}
+                {"realTimePlayerSpendToPassThisLevel", ApplicationData.TimeToPassLevel},
+                {"TryTimePlayerNeedToPassThisLevel", ApplicationData.levelTryTime},
+                {"TimePlayerFallIntoGap", ApplicationData.TimeFallIntoGap},
+                {"TimePlayerHitObstacle", ApplicationData.TimeHitObstacle},
+                {"CoinsPlayerCollectThisLevel", ApplicationData.coinsGetThisLevel}
             }
         );
 

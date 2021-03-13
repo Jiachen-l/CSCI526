@@ -22,4 +22,7 @@ public class ApplicationData
 	//record the coins this player has
 	static public int coins = 0;
 
+	//record the coins this player get at this level
+	static public int coinsGetThisLevel = 0;
+
 }
