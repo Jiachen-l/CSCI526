@@ -12,6 +12,12 @@ public class level0GameOverMenu : MonoBehaviour
 
     public GameObject retryButton;
 
+    public void ResumeFromLastCheckPoint()
+    {
+        retryButton.SetActive(true);
+        pauseButton.SetActive(true);
+        SceneManager.LoadScene("level0");
+    }
     public void Resume() {
         retryButton.SetActive(true);
         pauseButton.SetActive(true);

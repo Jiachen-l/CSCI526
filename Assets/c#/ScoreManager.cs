@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
     public Text text;
-    int score;
+    public static int score;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +21,10 @@ public class ScoreManager : MonoBehaviour
     public void ChangeScore(int coinValue)
     {
         score += coinValue;
+    }
+
+    private void Update()
+    {
         text.text = "X" + score.ToString();
     }
 
