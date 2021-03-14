@@ -83,11 +83,6 @@ public class TestController : MonoBehaviour
 
         if ((Input.GetMouseButtonDown(0) || Input.GetMouseButton(0)))
         {   
-            if (Input.GetMouseButtonDown(0))
-            {
-                Debug.Log(rightLeft);
-            }
-
             canMove = true;
             
             StartCoroutine(MoveStilts());
@@ -143,6 +138,6 @@ public class TestController : MonoBehaviour
         // originalR.MovePosition(originalPositionR);
         // character.MovePosition(originalPosition);
         // Debug.Log(character.transform.position.x + "," + character.transform.position.y);
-
     }
+
 }
