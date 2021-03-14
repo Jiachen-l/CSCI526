@@ -25,4 +25,16 @@ public class ApplicationData
 	//record the coins this player get at this level
 	static public int coinsGetThisLevel = 0;
 
+	//record the hammers this player has
+	static public int hammer_num = 0;
+
+	//record the fans this player has
+	static public int fan_num = 0;
+
+	//record the heathiers this player has
+	static public int heathier_num = 0;
+
+	//record the last scene this player has
+	static public int last_scene = 0;
+
 }

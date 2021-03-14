@@ -19,6 +19,7 @@ public class WinMenuController : MonoBehaviour
 
     void Start() {
         scene = SceneManager.GetActiveScene(); 
+        ApplicationData.last_scene = scene.buildIndex;
     }
 
 
@@ -65,5 +66,11 @@ public class WinMenuController : MonoBehaviour
         ApplicationData.coinsGetThisLevel = 0;
 
     	SceneManager.LoadScene(scene.buildIndex + 1);
+    }
+
+    public void shop() {
+        //enter shop
+
+    	SceneManager.LoadScene("shop");
     }
 }
