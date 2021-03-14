@@ -110,6 +110,8 @@ public class LoseOrWinController : MonoBehaviour
             }
         );
 
+        Debug.Log("ana:"+ ana);
+
         backToCheckPoint(other);
 
         if (playerHealth == 0)
