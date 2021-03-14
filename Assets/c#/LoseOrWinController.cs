@@ -130,6 +130,7 @@ public class LoseOrWinController : MonoBehaviour
 
     void damage(Collision2D other, int damage)
     {
+        // Debug.Log("damage damage damage");
         string name = other.gameObject.name;
         // int damage = other.gameObject.GetComponent<LoseCondition>().damage;
         playerHealth -= damage;
