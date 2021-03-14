@@ -13,6 +13,8 @@ public class LoseOrWinController : MonoBehaviour
     public GameObject pauseButton;
     public GameObject helpButton;
 
+    public float startPositionX;
+    public float startPositionY;
     public GameObject[] checkPoints;
     public static GameObject restartCheckPoint;
     private SpriteRenderer bodySprite;
@@ -31,9 +33,13 @@ public class LoseOrWinController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        startPositionX = GameObject.Find("XRpro").transform.position.x;
+        startPositionY = GameObject.Find("XRpro").transform.position.y;
+
         bodySprite = GameObject.Find("Body").GetComponent<SpriteRenderer>();
         headSprite = GameObject.Find("Head").GetComponent<SpriteRenderer>();
         checkPoints = GameObject.FindGameObjectsWithTag("CheckPoints");
+        
         playerHealth = ApplicationData.playerlives;
         isDead = false;
     }
@@ -159,12 +165,18 @@ public class LoseOrWinController : MonoBehaviour
         flashCounter = flashLength;
         GameObject character = ChangeCharacter.characterIndex == 0 ? GameObject.Find("XRpro") : GameObject.Find("XR");
 
+        if (character.transform.position.x < checkPoints[0].transform.position.x)
+        {
+            character.transform.position = new Vector3(startPositionX, startPositionY);
+            return;
+        }
+
         int i;
         for (i = 0; i < checkPoints.Length - 1; i++)
         {
             if (
-                other.gameObject.transform.position.x >= checkPoints[i].transform.position.x &&
-                other.gameObject.transform.position.x < checkPoints[i + 1].transform.position.x)
+                character.transform.position.x >= checkPoints[i].transform.position.x &&
+                character.transform.position.x < checkPoints[i + 1].transform.position.x)
             {
                 character.transform.position = checkPoints[i].transform.position + new Vector3(0.0f, 1.0f);
                 break;
