@@ -37,4 +37,7 @@ public class ApplicationData
 	//record the last scene this player has
 	static public int last_scene = 0;
 
+	// player lifes at the beginning
+	static public int playerlives = 10;
+
 }
