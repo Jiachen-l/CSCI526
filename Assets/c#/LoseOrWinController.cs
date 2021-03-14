@@ -7,20 +7,31 @@ using UnityEngine.SceneManagement;
 
 public class LoseOrWinController : MonoBehaviour
 {
-	public GameObject winMenu;
-	public GameObject gameOverMenu;
-	public GameObject retryButton;
-	public GameObject pauseButton;
-	public GameObject helpButton;
+    public GameObject winMenu;
+    public GameObject gameOverMenu;
+    public GameObject retryButton;
+    public GameObject pauseButton;
+    public GameObject helpButton;
+    public GameObject[] checkPoints;
+    private SpriteRenderer bodySprite;
+    private SpriteRenderer headSprite;
 
     public static int playerHealth;
 
     public Text text;
     public bool isDead;
 
+    private bool flashActive;
+    public float flashLength = 0.5f;
+    public float flashCounter;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        bodySprite = GameObject.Find("Body").GetComponent<SpriteRenderer>();
+        headSprite = GameObject.Find("Head").GetComponent<SpriteRenderer>();
+        checkPoints = GameObject.FindGameObjectsWithTag("CheckPoints");
         playerHealth = ApplicationData.playerlives;
         isDead = false;
     }
@@ -28,6 +39,32 @@ public class LoseOrWinController : MonoBehaviour
 
     void Update()
     {
+        if (flashActive)
+        {
+            if (flashCounter > flashLength * .66f)
+            {
+                bodySprite.color = Color.red;
+                headSprite.color = Color.red;
+            }
+            else if (flashCounter > flashLength * .33f)
+            {
+                bodySprite.color = Color.white;
+                headSprite.color = Color.white;
+            }
+            else if (flashCounter > 0f)
+            {
+                bodySprite.color = Color.red;
+                headSprite.color = Color.red;
+            }
+            else
+            {
+                bodySprite.color = Color.white;
+                headSprite.color = Color.white;
+                flashActive = false;
+            }
+            flashCounter -= Time.deltaTime;
+        }
+
         if (playerHealth <= 0 && !isDead)
         {
             playerHealth = 0;
@@ -40,29 +77,31 @@ public class LoseOrWinController : MonoBehaviour
     }
 
 
-    void OnCollisionEnter2D(Collision2D other) {
-        // LoseCondition lc = 
-
-        if (other.gameObject.GetComponent<LoseCondition>() != null) {
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.GetComponent<LoseCondition>() != null)
+        {
             ApplicationData.TimeHitObstacle++;
-            Damage(other.gameObject.name, other.gameObject.GetComponent<LoseCondition>().damage);
-            //loss(other.gameObject.name);
+            damage(other);
         }
 
-        if (other.gameObject.GetComponent<WinCondition>() != null) {
+        if (other.gameObject.GetComponent<WinCondition>() != null)
+        {
             win();
         }
 
-        if (other.gameObject.GetComponent<GapCondition>() != null) {
+        if (other.gameObject.GetComponent<GapCondition>() != null)
+        {
             ApplicationData.TimeFallIntoGap++;
-            loss(other.gameObject.name);
+            lose(other.gameObject.name);
         }
     }
 
-    void Damage(string name, int damage)
+    void damage(Collision2D other)
     {
+        string name = other.gameObject.name;
+        int damage = other.gameObject.GetComponent<LoseCondition>().damage;
         playerHealth -= damage;
-        //Debug.Log("damage "+ playerHealth);
         Scene scene = SceneManager.GetActiveScene();
         AnalyticsResult ana = Analytics.CustomEvent(
             scene.name,
@@ -71,28 +110,55 @@ public class LoseOrWinController : MonoBehaviour
             }
         );
 
+        backToCheckPoint(other);
+
         if (playerHealth == 0)
         {
-            loss(name);
+            lose(name);
         }
     }
 
-    void loss(string name) {
-        Scene scene = SceneManager.GetActiveScene(); 
+    void backToCheckPoint(Collision2D other)
+    {
+        flashActive = true;
+        flashCounter = flashLength;
+        GameObject character = GameObject.Find("XRpro");
+
+        int i;
+        for (i = 0; i < checkPoints.Length - 1; i++)
+        {
+            if (
+                other.gameObject.transform.position.x >= checkPoints[i].transform.position.x &&
+                other.gameObject.transform.position.x < checkPoints[i + 1].transform.position.x)
+            {
+                character.transform.position = checkPoints[i].transform.position + new Vector3(0.0f, 1.0f);
+                break;
+            }
+        }
+        if (i == checkPoints.Length - 1)
+        {
+            character.transform.position = checkPoints[i].transform.position + new Vector3(0.0f, 1.0f);
+        }
+    }
+
+    void lose(string name)
+    {
+        Scene scene = SceneManager.GetActiveScene();
         gameOverMenu.SetActive(true);
         retryButton.SetActive(false);
         pauseButton.SetActive(false);
-        helpButton.SetActive(false); 
+        helpButton.SetActive(false);
         AnalyticsResult ana = Analytics.CustomEvent(
             scene.name,
             new Dictionary<string, object> {
                 {"positionPlayerDie", name}
             }
-        );        
+        );
     }
 
-    void win() {
-        Scene scene = SceneManager.GetActiveScene(); 
+    void win()
+    {
+        Scene scene = SceneManager.GetActiveScene();
         ApplicationData.TimeToPassLevel = Time.time - ApplicationData.levelStartTime;
         AnalyticsResult ana = Analytics.CustomEvent(
             scene.name,
