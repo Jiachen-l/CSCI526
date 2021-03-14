@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class levelMenu : MonoBehaviour
 {
     public void level_one() {
-        SceneManager.LoadScene("shop");
+        SceneManager.LoadScene("level0");
         ApplicationData.TimeHitObstacle = 0;
         ApplicationData.TimeFallIntoGap = 0;
         ApplicationData.levelStartTime = Time.time;
