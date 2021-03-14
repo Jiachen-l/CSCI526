@@ -14,8 +14,6 @@ public class GameOverController : MonoBehaviour
     public GameObject retryButton;
 
     public GameObject helpButton;
-
-
     public void Resume() {
         Debug.Log("retry Time:" + ApplicationData.levelTryTime);
         retryButton.SetActive(true);
@@ -44,5 +42,25 @@ public class GameOverController : MonoBehaviour
         );           
         Debug.Log("Quit Game...");
         Application.Quit();
+    }
+
+    public void RestartFromCheckPoint()
+    {
+        Debug.Log("score" + ScoreManager.score);
+        if (ScoreManager.score > 0)
+        {
+            Scene scene = SceneManager.GetActiveScene();
+            LoseOrWinController.playerHealth = 1;
+            ScoreManager.score--;
+            gameOverMenu.SetActive(false);
+            retryButton.SetActive(true);
+            pauseButton.SetActive(true);
+            helpButton.SetActive(true);
+        } 
+        else
+        {
+            // No coin 
+
+        }
     }
 }

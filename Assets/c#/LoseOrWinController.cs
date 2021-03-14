@@ -12,7 +12,9 @@ public class LoseOrWinController : MonoBehaviour
     public GameObject retryButton;
     public GameObject pauseButton;
     public GameObject helpButton;
+
     public GameObject[] checkPoints;
+    public static GameObject restartCheckPoint;
     private SpriteRenderer bodySprite;
     private SpriteRenderer headSprite;
 
@@ -173,11 +175,15 @@ public class LoseOrWinController : MonoBehaviour
             character.transform.position = checkPoints[i].transform.position + new Vector3(0.0f, 1.0f);
         }
     }
-
     void lose(string name)
     {
+        if (ScoreManager.score == 0)
+        {
+            gameOverMenu.GetComponentInChildren<Button>().GetComponentInChildren<Text>().text = "No Coin Left!";
+        }
+        
         Scene scene = SceneManager.GetActiveScene();
-        gameOverMenu.SetActive(true);
+        gameOverMenu.SetActive(true); 
         retryButton.SetActive(false);
         pauseButton.SetActive(false);
         helpButton.SetActive(false);
