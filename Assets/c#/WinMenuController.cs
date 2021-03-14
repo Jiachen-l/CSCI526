@@ -64,8 +64,10 @@ public class WinMenuController : MonoBehaviour
         ApplicationData.levelStartTime = Time.time;
         ApplicationData.coins += ApplicationData.coinsGetThisLevel;
         ApplicationData.coinsGetThisLevel = 0;
+        ApplicationData.playerlives = LoseOrWinController.playerHealth;
 
-    	SceneManager.LoadScene(scene.buildIndex + 1);
+
+        SceneManager.LoadScene(scene.buildIndex + 1);
     }
 
     public void shop() {
