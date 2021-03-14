@@ -76,13 +76,33 @@ public class LoseOrWinController : MonoBehaviour
 
     }
 
+    private bool checkIgnoreCollisions(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("ignore collision!!!!!!!");
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        if (checkIgnoreCollisions(other))
+        {
+            Physics2D.IgnoreCollision(other.gameObject.GetComponent<Collider2D>(), this.gameObject.GetComponent<Collider2D>());
+        }
+
         if (other.gameObject.GetComponent<LoseCondition>() != null)
         {
             ApplicationData.TimeHitObstacle++;
-            damage(other, 1);
+            if (checkDamage(other))
+            {
+                damage(other, 1);
+            }
         }
 
         if (other.gameObject.GetComponent<WinCondition>() != null)
@@ -94,6 +114,18 @@ public class LoseOrWinController : MonoBehaviour
         {
             ApplicationData.TimeFallIntoGap++;
             damage(other, 1);
+        }
+    }
+
+    private bool checkDamage(Collision2D other)
+    {
+        if (other.gameObject.name == "LavaTilemap" && (this.gameObject.name == "bone_3" || this.gameObject.name == "bone_4"))
+        {
+            return false;
+        }
+        else
+        {
+            return true;
         }
     }
 

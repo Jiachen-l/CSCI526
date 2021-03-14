@@ -13,7 +13,6 @@ public class TestController : MonoBehaviour
     private float speedY = 2f;
     public bool canMove = false;
     private bool rightLeft = true;
-    public GameObject gameOverMenu;
     
     // public float originalDistance;
 
@@ -129,15 +128,6 @@ public class TestController : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         
-    }
-
-    public void gameover() {
-        gameOverMenu.SetActive(true);
-        // Time.timeScale = 0f;
-        // originalL.MovePosition(originalPositionL);
-        // originalR.MovePosition(originalPositionR);
-        // character.MovePosition(originalPosition);
-        // Debug.Log(character.transform.position.x + "," + character.transform.position.y);
     }
 
 }
