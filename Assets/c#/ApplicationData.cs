@@ -25,4 +25,7 @@ public class ApplicationData
 	//record the coins this player get at this level
 	static public int coinsGetThisLevel = 0;
 
+	// player lifes at the beginning
+	static public int playerlives = 10;
+
 }
