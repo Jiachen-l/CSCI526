@@ -80,7 +80,6 @@ public class LoseOrWinController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("ignore collision!!!!!!!");
             return true;
         }
         else
@@ -156,7 +155,7 @@ public class LoseOrWinController : MonoBehaviour
     {
         flashActive = true;
         flashCounter = flashLength;
-        GameObject character = GameObject.Find("XRpro");
+        GameObject character = ChangeCharacter.characterIndex == 0 ? GameObject.Find("XRpro") : GameObject.Find("XR");
 
         int i;
         for (i = 0; i < checkPoints.Length - 1; i++)
