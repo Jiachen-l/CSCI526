@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +13,29 @@ public class LoseOrWinController : MonoBehaviour
 	public GameObject pauseButton;
 	public GameObject helpButton;
 
-    void Update() {
+    public static int playerHealth;
+
+    public Text text;
+    public bool isDead;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        playerHealth = ApplicationData.playerlives;
+        isDead = false;
+    }
+
+
+    void Update()
+    {
+        if (playerHealth <= 0 && !isDead)
+        {
+            playerHealth = 0;
+
+            isDead = true;
+        }
+
+        text.text = "X" + playerHealth.ToString();
 
     }
 
@@ -22,7 +45,8 @@ public class LoseOrWinController : MonoBehaviour
 
         if (other.gameObject.GetComponent<LoseCondition>() != null) {
             ApplicationData.TimeHitObstacle++;
-            loss(other.gameObject.name);
+            Damage(other.gameObject.name, other.gameObject.GetComponent<LoseCondition>().damage);
+            //loss(other.gameObject.name);
         }
 
         if (other.gameObject.GetComponent<WinCondition>() != null) {
@@ -35,6 +59,24 @@ public class LoseOrWinController : MonoBehaviour
         }
     }
 
+    void Damage(string name, int damage)
+    {
+        playerHealth -= damage;
+        //Debug.Log("damage "+ playerHealth);
+        Scene scene = SceneManager.GetActiveScene();
+        AnalyticsResult ana = Analytics.CustomEvent(
+            scene.name,
+            new Dictionary<string, object> {
+                {"positionPlayerHurt", name}
+            }
+        );
+
+        if (playerHealth == 0)
+        {
+            loss(name);
+        }
+    }
+
     void loss(string name) {
         Scene scene = SceneManager.GetActiveScene(); 
         gameOverMenu.SetActive(true);
@@ -44,7 +86,7 @@ public class LoseOrWinController : MonoBehaviour
         AnalyticsResult ana = Analytics.CustomEvent(
             scene.name,
             new Dictionary<string, object> {
-                {"positionPlayerDieOrHurt", name}
+                {"positionPlayerDie", name}
             }
         );        
     }
