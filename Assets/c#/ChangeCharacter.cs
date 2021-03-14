@@ -6,8 +6,7 @@ public class ChangeCharacter : MonoBehaviour
 {   
     public GameObject changeCharacterObject;
     public GameObject[] characterCollection;
-    [SerializeField] private int characterIndex;
-    // private GameObject mainCharacter;
+    static public int characterIndex;
 
     public bool changeCharacterActive;
 
