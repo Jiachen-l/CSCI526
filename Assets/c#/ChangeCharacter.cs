@@ -58,6 +58,15 @@ public class ChangeCharacter : MonoBehaviour
                 characterCollection[i].gameObject.SetActive(false);
             }
             characterCollection[characterIndex].gameObject.SetActive(true);
+            if (characterIndex == 1) {
+                GameObject.Find("Main Camera").GetComponent<CameraColtroller>().target1 = GameObject.Find("bone_3").transform;
+                GameObject.Find("Main Camera").GetComponent<CameraColtroller>().target2 = GameObject.Find("bone_4").transform;
+            }
+            else if (characterIndex == 0)
+            {
+                GameObject.Find("Main Camera").GetComponent<CameraColtroller>().target1 = GameObject.Find("XRpro").transform;
+                GameObject.Find("Main Camera").GetComponent<CameraColtroller>().target2 = GameObject.Find("XRpro").transform;
+            }
 
             changeCharacterActive = false;
 		}

@@ -8,7 +8,7 @@ public class TestController : MonoBehaviour
     public Rigidbody2D lrb;
     public Rigidbody2D rrb;
     public Rigidbody2D character;
-    private float characterHeight = 5.5f;
+    private float characterHeight = 3.7f;
     private float speedX = 1f;
     private float speedY = 2f;
     public bool canMove = false;
