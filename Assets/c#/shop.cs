@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.Analytics;
 
 public class shop : MonoBehaviour
 {   
@@ -11,7 +12,9 @@ public class shop : MonoBehaviour
     public Text hammers;
     public Text fans;
     public Text heathiers;
+    private Scene scene;
     public void start() {
+        scene = SceneManager.GetActiveScene(); 
         //coins = GameObject.Find("coin_num_text"); 
         //coins.text="X5"; 
     }
@@ -26,6 +29,13 @@ public class shop : MonoBehaviour
             ApplicationData.hammer_num += 1;
             hammers.text="X"+ApplicationData.hammer_num.ToString(); 
             coins.text="X"+ApplicationData.coins.ToString(); 
+
+            AnalyticsResult ana = Analytics.CustomEvent(
+                "ToolsAnalytics",
+                new Dictionary<string, object> {
+                    {"ToolCounter", "hammer"}
+                }
+            );                
             //GameObject.GetComponent<UnityEngine.UI.Text>().text = ApplicationData.coins.ToString();
             //gameObject.Find("hammer_num_text").GetComponent(UI.Text).text="X"+ApplicationData.hammer_num;
         }
@@ -42,6 +52,12 @@ public class shop : MonoBehaviour
             ApplicationData.fan_num += 1;
             fans.text="X"+ApplicationData.fan_num.ToString(); 
             coins.text="X"+ApplicationData.coins.ToString(); 
+            AnalyticsResult ana = Analytics.CustomEvent(
+                "ShopAnalytics",
+                new Dictionary<string, object> {
+                    {"ToolCounter", "fan"}
+                }
+            );             
             //gameObject.Find("coin_num_text").GetComponent(UI.Text).text="X"+ApplicationData.coins;
             //gameObject.Find("hammer_num_text").GetComponent(UI.Text).text="X"+ApplicationData.fan_num;
         }
@@ -57,6 +73,12 @@ public class shop : MonoBehaviour
             ApplicationData.heathier_num += 1;
             heathiers.text="X"+ApplicationData.heathier_num.ToString(); 
             coins.text="X"+ApplicationData.coins.ToString(); 
+            AnalyticsResult ana = Analytics.CustomEvent(
+                "ShopAnalytics",
+                new Dictionary<string, object> {
+                    {"ToolCounter", "heathier"}
+                }
+            );             
             //gameObject.Find("coin_num_text").GetComponent(UI.Text).text="X"+ApplicationData.coins;
             //gameObject.Find("hammer_num_text").GetComponent(UI.Text).text="X"+ApplicationData.heathier_num;
         }
@@ -66,6 +88,12 @@ public class shop : MonoBehaviour
     public void buy_coin() {
         ApplicationData.coins += 10;
         coins.text="X"+ApplicationData.coins.ToString(); 
+        AnalyticsResult ana = Analytics.CustomEvent(
+                "ShopAnalytics",
+                new Dictionary<string, object> {
+                    {"MoneyPlayerSpend", "coins X 10"}
+                }
+            ); 
         //gameObject.Find("coin_num_text").GetComponent(UI.Text).text="X"+ApplicationData.coins;
         //GameObject.GetComponent<UnityEngine.UI.Text>().text = ApplicationData.coins.ToString();
     }
