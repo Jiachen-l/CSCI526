@@ -1117,6 +1117,7 @@ MonoBehaviour:
   hammers: {fileID: 0}
   fans: {fileID: 0}
   heathiers: {fileID: 0}
+  shopMenu: {fileID: 0}
 --- !u!1 &2880149207627071643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,20 +1378,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5135542170090596937}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 5423335436552104581}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 7656341579174156175}
+        m_MethodName: showShop
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2294,6 +2284,7 @@ MonoBehaviour:
   hammers: {fileID: 7986538011902519348}
   fans: {fileID: 2438309088588300317}
   heathiers: {fileID: 7461571193563210804}
+  shopMenu: {fileID: 5135542170090596937}
 --- !u!1 &5209377830601811489
 GameObject:
   m_ObjectHideFlags: 0
@@ -3884,6 +3875,7 @@ MonoBehaviour:
   pauseButton: {fileID: 5423335434825262572}
   retryButton: {fileID: 5423335436005625548}
   helpButton: {fileID: 5423335434979613165}
+  shopMenu: {fileID: 5135542170090596937}
 --- !u!1 &5423335435409248054
 GameObject:
   m_ObjectHideFlags: 0
@@ -6333,6 +6325,7 @@ MonoBehaviour:
   pauseButton: {fileID: 5423335434825262572}
   retryButton: {fileID: 5423335436005625548}
   helpButton: {fileID: 5423335434979613165}
+  shopMenu: {fileID: 5135542170090596937}
 --- !u!1 &5678357620559360728
 GameObject:
   m_ObjectHideFlags: 0
