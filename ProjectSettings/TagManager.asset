@@ -9,6 +9,8 @@ TagManager:
   - XRshrink
   - Coin
   - CheckPoints
+  - hammer_enemy
+  - fan_enemy
   layers:
   - Default
   - TransparentFX

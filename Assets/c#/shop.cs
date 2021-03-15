@@ -14,6 +14,7 @@ public class shop : MonoBehaviour
     public Text heathiers;
     private Scene scene;
     public GameObject shopMenu;
+    public GameObject notEnoughMoney;
 
     public void start() {
         scene = SceneManager.GetActiveScene(); 
@@ -24,7 +25,7 @@ public class shop : MonoBehaviour
     // Start is called before the first frame update
     public void buy_hammer() {
         if (ApplicationData.coins < 5) {
-            
+            notEnoughMoney.SetActive(true);
         }
         else {
             ApplicationData.coins -= 5;     
@@ -47,7 +48,7 @@ public class shop : MonoBehaviour
 
     public void buy_fan() {
         if (ApplicationData.coins < 5) {
-            
+            notEnoughMoney.SetActive(true);
         }
         else {
             ApplicationData.coins -= 5;
@@ -68,7 +69,7 @@ public class shop : MonoBehaviour
 
     public void buy_heathier() {
         if (ApplicationData.coins < 5) {
-            
+            notEnoughMoney.SetActive(true);
         }
         else {
             ApplicationData.coins -= 5;
@@ -115,6 +116,10 @@ public class shop : MonoBehaviour
     // }
     public void hideShopMenu() {
         shopMenu.SetActive(false);
+    }
+
+    public void hideNotEnoughMoney() {
+        notEnoughMoney.SetActive(false);
     }
 
 
