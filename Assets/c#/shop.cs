@@ -33,7 +33,7 @@ public class shop : MonoBehaviour
             ScoreManager.instance.ChangeScore(-5);
 
             AnalyticsResult ana = Analytics.CustomEvent(
-                "ToolsAnalytics",
+                "ShopAnalytics",
                 new Dictionary<string, object> {
                     {"ToolCounter", "hammer"}
                 }
