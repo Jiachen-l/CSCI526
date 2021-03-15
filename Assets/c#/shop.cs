@@ -24,12 +24,12 @@ public class shop : MonoBehaviour
 
     // Start is called before the first frame update
     public void buy_hammer() {
-        if (ApplicationData.coins < 5) {
+        if (ScoreManager.coin < 5) {
             notEnoughMoney.SetActive(true);
         }
         else {
-            ApplicationData.coins -= 5;     
-            ApplicationData.hammer_num += 1;
+            // ApplicationData.coins -= 5;     
+            // ApplicationData.hammer_num += 1;
             ScoreManager.instance.ChangeHammer(1);
             ScoreManager.instance.ChangeScore(-5);
 
@@ -47,12 +47,12 @@ public class shop : MonoBehaviour
     }
 
     public void buy_fan() {
-        if (ApplicationData.coins < 5) {
+        if (ScoreManager.coin < 5) {
             notEnoughMoney.SetActive(true);
         }
         else {
-            ApplicationData.coins -= 5;
-            ApplicationData.fan_num += 1;
+            // ApplicationData.coins -= 5;
+            // ApplicationData.fan_num += 1;
             ScoreManager.instance.ChangeFan(1);
             ScoreManager.instance.ChangeScore(-5);
             AnalyticsResult ana = Analytics.CustomEvent(
@@ -68,12 +68,12 @@ public class shop : MonoBehaviour
     }
 
     public void buy_heathier() {
-        if (ApplicationData.coins < 5) {
+        if (ScoreManager.coin < 5) {
             notEnoughMoney.SetActive(true);
         }
         else {
-            ApplicationData.coins -= 5;
-            ApplicationData.heathier_num += 1;
+            // ApplicationData.coins -= 5;
+            // ApplicationData.healthier_num += 1;
             ScoreManager.instance.ChangeHealthier(1);
             ScoreManager.instance.ChangeScore(-5);
             AnalyticsResult ana = Analytics.CustomEvent(
@@ -89,7 +89,7 @@ public class shop : MonoBehaviour
     }
 
     public void buy_coin() {
-        ApplicationData.coins += 10;
+        //ApplicationData.coins += 10;
         ScoreManager.instance.ChangeScore(10);
         Debug.Log("buy coin");
         AnalyticsResult ana = Analytics.CustomEvent(

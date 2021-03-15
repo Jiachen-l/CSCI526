@@ -2315,7 +2315,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Heathier(jump higher)
+  m_Text: Heathier(more health)
 --- !u!1 &4882126862438426682
 GameObject:
   m_ObjectHideFlags: 0
@@ -4738,15 +4738,16 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Tutorial
 
+    1.Use WASD to move or click the left mouse to move forward.
 
-    1.Click the left mouse to move forward.
+    2.Be
+    careful of gaps and steps. Avoid obstacles.
 
+    4.Click icons in the right:
+    Fan and hammer can remove enemies. Elixir of health can give you more health.
 
-    2.Be careful
-    of gaps and steps.
-
-
-    3.Avoid obstacles'
+    Have
+    fun!'
 --- !u!1 &5423335435591976063
 GameObject:
   m_ObjectHideFlags: 0
