@@ -91,7 +91,7 @@ public class shop : MonoBehaviour
         AnalyticsResult ana = Analytics.CustomEvent(
                 "ShopAnalytics",
                 new Dictionary<string, object> {
-                    {"MoneyPlayerSpend", "coins X 10"}
+                    {"MoneyPlayerSpend", "money X 10"}
                 }
             ); 
         //gameObject.Find("coin_num_text").GetComponent(UI.Text).text="X"+ApplicationData.coins;
