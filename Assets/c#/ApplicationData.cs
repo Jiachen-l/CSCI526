@@ -32,7 +32,7 @@ public class ApplicationData
 	static public int fan_num = 0;
 
 	//record the heathiers this player has
-	static public int heathier_num = 0;
+	static public int healthier_num = 0;
 
 	//record the last scene this player has
 	static public int last_scene = 0;

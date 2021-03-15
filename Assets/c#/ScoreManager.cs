@@ -24,9 +24,9 @@ public class ScoreManager : MonoBehaviour
             instance = this;
         }
         coin = ApplicationData.coins;
-        fan_num = 0;
-        hammer_num = 0;
-        healthier_num = 0;
+        fan_num = ApplicationData.fan_num;
+        hammer_num = ApplicationData.hammer_num;
+        healthier_num = ApplicationData.healthier_num;
     }
 
 
@@ -37,25 +37,42 @@ public class ScoreManager : MonoBehaviour
 
     public void ChangeHammer(int value)
     {
-        hammer_num += value;
+        ApplicationData.hammer_num += value;
     }
 
     public void ChangeFan(int value)
     {
-        fan_num += value;
+        ApplicationData.fan_num += value;
     }
 
     public void ChangeHealthier(int value)
     {
-        healthier_num += value;
+        ApplicationData.healthier_num += value;
     }
+
+    public int GetHealthier()
+    {
+        return ApplicationData.healthier_num;
+    }
+
+    public int GetHammer()
+    {
+        return ApplicationData.hammer_num;
+    }
+
+    public int GetFan()
+    {
+        return ApplicationData.fan_num;
+    }
+
+    
 
     private void Update()
     {
         coins_text.text = "X" + coin.ToString();
-        hammer_text.text = "X" + hammer_num.ToString();
-        fan_text.text = "X" + fan_num.ToString();
-        healthier_text.text = "X" + healthier_num.ToString();
+        hammer_text.text = "X" + ApplicationData.hammer_num.ToString();
+        fan_text.text = "X" + ApplicationData.fan_num.ToString();
+        healthier_text.text = "X" + ApplicationData.healthier_num.ToString();
     }
 
 
