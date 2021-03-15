@@ -881,6 +881,7 @@ GameObject:
   - component: {fileID: 9085989345550848081}
   - component: {fileID: 7215569522704148036}
   - component: {fileID: 965338504449348580}
+  - component: {fileID: 8898769862314274027}
   m_Layer: 5
   m_Name: fan_num
   m_TagString: Untagged
@@ -944,6 +945,34 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8898769862314274027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2219871753166311632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7900905002737299004}
+          m_MethodName: fan
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2767488110688781552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,6 +1504,7 @@ GameObject:
   - component: {fileID: 1052502378581957326}
   - component: {fileID: 5923865908840704746}
   - component: {fileID: 3375968122369626593}
+  - component: {fileID: 3937377058608795334}
   m_Layer: 5
   m_Name: healthier_num
   m_TagString: Untagged
@@ -1538,6 +1568,34 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3937377058608795334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3046412653267899673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7900905002737299004}
+          m_MethodName: increment_health
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &3136654528969787577
 GameObject:
   m_ObjectHideFlags: 0
@@ -4100,6 +4158,7 @@ GameObject:
   - component: {fileID: 5423335435409248049}
   - component: {fileID: 5423335435409248048}
   - component: {fileID: 5423335435409248055}
+  - component: {fileID: 7900905002737299004}
   m_Layer: 5
   m_Name: Menus
   m_TagString: Untagged
@@ -4224,6 +4283,18 @@ MonoBehaviour:
   pauseButton: {fileID: 5423335434825262572}
   retryButton: {fileID: 5423335436005625548}
   helpButton: {fileID: 5423335434979613165}
+--- !u!114 &7900905002737299004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5423335435409248054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07558937aefe5cd4f8d74de8baeb777a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5423335435450853955
 GameObject:
   m_ObjectHideFlags: 0
@@ -7452,6 +7523,7 @@ GameObject:
   - component: {fileID: 1280512792071326396}
   - component: {fileID: 4393798544200895525}
   - component: {fileID: 1881117097158782813}
+  - component: {fileID: 4756953673564048955}
   m_Layer: 5
   m_Name: coin_num
   m_TagString: Untagged
@@ -7515,6 +7587,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4756953673564048955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8510661291548763771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &8528011817784993626
 GameObject:
   m_ObjectHideFlags: 0
@@ -7526,6 +7611,7 @@ GameObject:
   - component: {fileID: 6710836154675956691}
   - component: {fileID: 7133948646886611442}
   - component: {fileID: 8039089348091583129}
+  - component: {fileID: 5094471916601415869}
   m_Layer: 5
   m_Name: hammer_num
   m_TagString: Untagged
@@ -7589,6 +7675,34 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5094471916601415869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8528011817784993626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7900905002737299004}
+          m_MethodName: hammer
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8989881130087694724
 GameObject:
   m_ObjectHideFlags: 0
