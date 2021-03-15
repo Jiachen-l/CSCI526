@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 8765050447280280267}
   - component: {fileID: 2100052300}
   - component: {fileID: 1232351885}
+  - component: {fileID: 889217108}
   m_Layer: 0
   m_Name: XRpro
   m_TagString: Player
@@ -394,6 +395,8 @@ MonoBehaviour:
   retryButton: {fileID: 0}
   pauseButton: {fileID: 0}
   helpButton: {fileID: 0}
+  startPositionX: 0
+  startPositionY: 0
   checkPoints: []
   text: {fileID: 0}
   isDead: 0
@@ -406,7 +409,7 @@ EdgeCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8765050447280280259}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 6200000, guid: a663b08dab13a4cc3a58bb9e970876db, type: 2}
   m_IsTrigger: 0
@@ -418,7 +421,7 @@ EdgeCollider2D:
   - {x: 0.4658656, y: -0.083265305}
   - {x: -2.1495755, y: -0.06858615}
   - {x: -1.728023, y: -2.8947651}
-  - {x: -0.6184642, y: -3.8000195}
+  - {x: -0.59930485, y: -3.9916112}
   - {x: 0.24496707, y: -2.864292}
   - {x: 0.48334885, y: 0}
 --- !u!212 &1232351885
@@ -471,6 +474,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &889217108
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8765050447280280259}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: a663b08dab13a4cc3a58bb9e970876db, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.66449004, y: -1.9201121}
+  m_Size: {x: 1.5083662, y: 3.907211}
+  m_Direction: 0
 --- !u!1 &8765050447489605683
 GameObject:
   m_ObjectHideFlags: 0
