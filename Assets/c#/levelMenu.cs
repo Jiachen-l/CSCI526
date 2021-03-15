@@ -23,6 +23,15 @@ public class levelMenu : MonoBehaviour
         ApplicationData.last_scene = 1;
     }
 
+    public void level_three() {
+        SceneManager.LoadScene("level2");
+        ApplicationData.TimeHitObstacle = 0;
+        ApplicationData.TimeFallIntoGap = 0;
+        ApplicationData.levelTryTime = 1;
+        ApplicationData.levelStartTime = Time.time;
+        ApplicationData.last_scene = 1;
+    }
+
     public void back() {
         SceneManager.LoadScene("Menu");
     }

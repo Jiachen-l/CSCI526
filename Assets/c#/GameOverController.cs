@@ -59,6 +59,12 @@ public class GameOverController : MonoBehaviour
             retryButton.SetActive(true);
             pauseButton.SetActive(true);
             helpButton.SetActive(true);
+            AnalyticsResult ana = Analytics.CustomEvent(
+                "playerSpendMoneyToRestart",
+                new Dictionary<string, object> {
+                    {"playerSpendMoneyToRestart", "playerSpendMoneyToRestart"}
+                }
+            );  
         } 
         else
         {
