@@ -73,14 +73,14 @@ public class LoseOrWinController : MonoBehaviour
             flashCounter -= Time.deltaTime;
         }
 
-        if (ApplicationData.playerlives <= 0 && !isDead)
+        if (playerHealth <= 0 && !isDead)
         {
-            ApplicationData.playerlives = 0;
+            playerHealth = 0;
 
             isDead = true;
         }
 
-        text.text = "X" + ApplicationData.playerlives.ToString();
+        text.text = "X" + playerHealth.ToString();
 
     }
 
@@ -140,7 +140,7 @@ public class LoseOrWinController : MonoBehaviour
     {
         string name = other.gameObject.name;
         // int damage = other.gameObject.GetComponent<LoseCondition>().damage;
-        ApplicationData.playerlives -= damage;
+        playerHealth -= damage;
         Scene scene = SceneManager.GetActiveScene();
         AnalyticsResult ana = Analytics.CustomEvent(
             scene.name,
@@ -153,7 +153,7 @@ public class LoseOrWinController : MonoBehaviour
 
         backToCheckPoint(other);
 
-        if (ApplicationData.playerlives == 0)
+        if (playerHealth == 0)
         {
             lose(name);
         }

@@ -1772,7 +1772,7 @@ GameObject:
   - component: {fileID: 1245922311}
   m_Layer: 0
   m_Name: Enemy3_HoleEnemy
-  m_TagString: Untagged
+  m_TagString: hammer_enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7882,6 +7882,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy1_BlueBat
       objectReference: {fileID: 0}
+    - target: {fileID: 4041788104974164739, guid: a8c0f8dfb76a34df0bb3bd7be126f0e8,
+        type: 3}
+      propertyPath: m_TagString
+      value: fan_enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4041788104974164740, guid: a8c0f8dfb76a34df0bb3bd7be126f0e8,
         type: 3}
       propertyPath: m_RootOrder
@@ -8124,6 +8129,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy2_HoleEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047199882377597087, guid: 2671770ee78c74f16912dca2d83671bf,
+        type: 3}
+      propertyPath: m_TagString
+      value: hammer_enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2671770ee78c74f16912dca2d83671bf, type: 3}
