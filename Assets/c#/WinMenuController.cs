@@ -15,6 +15,8 @@ public class WinMenuController : MonoBehaviour
 
     public GameObject helpButton;
 
+    public GameObject shopMenu;
+
     private Scene scene;
 
     void Start() {
@@ -71,6 +73,7 @@ public class WinMenuController : MonoBehaviour
     public void shop() {
         //enter shop
 
-    	SceneManager.LoadScene("shop");
+    	// SceneManager.LoadScene("shop");
+        shopMenu.SetActive(true);
     }
 }

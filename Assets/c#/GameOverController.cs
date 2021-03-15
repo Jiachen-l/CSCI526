@@ -14,6 +14,9 @@ public class GameOverController : MonoBehaviour
     public GameObject retryButton;
 
     public GameObject helpButton;
+
+    public GameObject shopMenu;
+
     public void Resume() {
         Debug.Log("retry Time:" + ApplicationData.levelTryTime);
         retryButton.SetActive(true);
@@ -62,5 +65,9 @@ public class GameOverController : MonoBehaviour
             // No coin 
 
         }
+    }
+
+    public void showShop() {
+        shopMenu.SetActive(true);
     }
 }

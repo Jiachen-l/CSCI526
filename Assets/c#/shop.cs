@@ -13,6 +13,8 @@ public class shop : MonoBehaviour
     public Text fans;
     public Text heathiers;
     private Scene scene;
+    public GameObject shopMenu;
+
     public void start() {
         scene = SceneManager.GetActiveScene(); 
         //coins = GameObject.Find("coin_num_text"); 
@@ -99,17 +101,20 @@ public class shop : MonoBehaviour
         //GameObject.GetComponent<UnityEngine.UI.Text>().text = ApplicationData.coins.ToString();
     }
 
-    public void next() {
-        if (ApplicationData.last_scene == 0) {
-            SceneManager.LoadScene("level1");
-        }
-        else if (ApplicationData.last_scene == 1) {
-            SceneManager.LoadScene("level2");
-        }
-        else {
-            SceneManager.LoadScene("Menu");
-        }
+    // public void next() {
+    //     if (ApplicationData.last_scene == 0) {
+    //         SceneManager.LoadScene("level1");
+    //     }
+    //     else if (ApplicationData.last_scene == 1) {
+    //         SceneManager.LoadScene("level2");
+    //     }
+    //     else {
+    //         SceneManager.LoadScene("Menu");
+    //     }
         
+    // }
+    public void hideShopMenu() {
+        shopMenu.SetActive(false);
     }
 
 
