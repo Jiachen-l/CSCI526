@@ -46,7 +46,7 @@ public class GameOverController : MonoBehaviour
 
     public void RestartFromCheckPoint()
     {
-        Debug.Log("score" + ScoreManager.score);
+        Debug.Log("score" + ApplicationData.coins);
         if (ApplicationData.coins > 0)
         {
             Scene scene = SceneManager.GetActiveScene();

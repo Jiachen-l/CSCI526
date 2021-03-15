@@ -27,8 +27,8 @@ public class shop : MonoBehaviour
         else {
             ApplicationData.coins -= 5;     
             ApplicationData.hammer_num += 1;
-            hammers.text="X"+ApplicationData.hammer_num.ToString(); 
-            coins.text="X"+ApplicationData.coins.ToString(); 
+            ScoreManager.instance.ChangeHammer(1);
+            ScoreManager.instance.ChangeScore(-5);
 
             AnalyticsResult ana = Analytics.CustomEvent(
                 "ToolsAnalytics",
@@ -50,8 +50,8 @@ public class shop : MonoBehaviour
         else {
             ApplicationData.coins -= 5;
             ApplicationData.fan_num += 1;
-            fans.text="X"+ApplicationData.fan_num.ToString(); 
-            coins.text="X"+ApplicationData.coins.ToString(); 
+            ScoreManager.instance.ChangeFan(1);
+            ScoreManager.instance.ChangeScore(-5);
             AnalyticsResult ana = Analytics.CustomEvent(
                 "ShopAnalytics",
                 new Dictionary<string, object> {
@@ -71,8 +71,8 @@ public class shop : MonoBehaviour
         else {
             ApplicationData.coins -= 5;
             ApplicationData.heathier_num += 1;
-            heathiers.text="X"+ApplicationData.heathier_num.ToString(); 
-            coins.text="X"+ApplicationData.coins.ToString(); 
+            ScoreManager.instance.ChangeHealthier(1);
+            ScoreManager.instance.ChangeScore(-5);
             AnalyticsResult ana = Analytics.CustomEvent(
                 "ShopAnalytics",
                 new Dictionary<string, object> {
@@ -87,7 +87,8 @@ public class shop : MonoBehaviour
 
     public void buy_coin() {
         ApplicationData.coins += 10;
-        coins.text="X"+ApplicationData.coins.ToString(); 
+        ScoreManager.instance.ChangeScore(10);
+        Debug.Log("buy coin");
         AnalyticsResult ana = Analytics.CustomEvent(
                 "ShopAnalytics",
                 new Dictionary<string, object> {

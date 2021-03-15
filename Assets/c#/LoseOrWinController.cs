@@ -187,9 +187,10 @@ public class LoseOrWinController : MonoBehaviour
             character.transform.position = checkPoints[i].transform.position + new Vector3(0.0f, 1.0f);
         }
     }
+
     void lose(string name)
     {
-        if (ScoreManager.score == 0)
+        if (ApplicationData.coins == 0)
         {
             gameOverMenu.GetComponentInChildren<Button>().GetComponentInChildren<Text>().text = "No Coin Left!";
         }
