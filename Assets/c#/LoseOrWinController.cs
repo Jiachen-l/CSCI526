@@ -188,13 +188,13 @@ public class LoseOrWinController : MonoBehaviour
                 character.transform.position.x >= checkPoints[i].transform.position.x &&
                 character.transform.position.x < checkPoints[i + 1].transform.position.x)
             {
-                character.transform.position = checkPoints[i].transform.position + new Vector3(0.0f, 1.0f);
+                character.transform.position = checkPoints[i].transform.position + new Vector3(0.0f, 5.0f);
                 break;
             }
         }
         if (i == checkPoints.Length - 1)
         {
-            character.transform.position = checkPoints[i].transform.position + new Vector3(0.0f, 1.0f);
+            character.transform.position = checkPoints[i].transform.position + new Vector3(0.0f, 5.0f);
         }
     }
 
