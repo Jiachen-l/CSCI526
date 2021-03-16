@@ -200,7 +200,7 @@ public class LoseOrWinController : MonoBehaviour
 
     void lose(string name)
     {
-        if (ApplicationData.coins == 0)
+        if (ScoreManager.coin == 0)
         {
             gameOverMenu.GetComponentInChildren<Button>().GetComponentInChildren<Text>().text = "No Coin Left!";
         }
