@@ -4612,18 +4612,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc9b7d11229144203a359643ce1772ed, type: 3}
---- !u!114 &49129641 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7675910772395190110, guid: dc9b7d11229144203a359643ce1772ed,
-    type: 3}
-  m_PrefabInstance: {fileID: 49129640}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &49129642 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2438309088588300317, guid: dc9b7d11229144203a359643ce1772ed,
@@ -5836,7 +5824,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1222850827}
-  m_RootOrder: 9
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &368873314
 MonoBehaviour:
@@ -6248,7 +6236,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1222850827}
-  m_RootOrder: 11
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &455436372
 TilemapCollider2D:
@@ -6515,7 +6503,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1222850827}
-  m_RootOrder: 10
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &587871497
 TilemapCollider2D:
@@ -6905,7 +6893,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1222850827}
-  m_RootOrder: 3
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &686678511
 TilemapRenderer:
@@ -7113,7 +7101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692152251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.89, y: -4.46, z: 0}
+  m_LocalPosition: {x: 81.91, y: -4.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1495348581}
@@ -7584,7 +7572,7 @@ GameObject:
   - component: {fileID: 835533200}
   m_Layer: 0
   m_Name: LavaTilemap4
-  m_TagString: Untagged
+  m_TagString: LavaTilemap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7601,7 +7589,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1222850827}
-  m_RootOrder: 14
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &835533200
 MonoBehaviour:
@@ -7993,7 +7981,7 @@ GameObject:
   - component: {fileID: 883918857}
   m_Layer: 0
   m_Name: LavaTilemap5
-  m_TagString: Untagged
+  m_TagString: LavaTilemap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8010,7 +7998,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1222850827}
-  m_RootOrder: 15
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &883918857
 MonoBehaviour:
@@ -8291,7 +8279,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1222850827}
-  m_RootOrder: 5
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &914072616
 TilemapCollider2D:
@@ -9128,7 +9116,7 @@ MonoBehaviour:
   startPositionX: 0
   startPositionY: 0
   checkPoints: []
-  text: {fileID: 49129641}
+  text: {fileID: 1097749179}
   isDead: 0
   flashLength: 0.5
   flashCounter: 0
@@ -9248,7 +9236,7 @@ GameObject:
   - component: {fileID: 1222443504}
   m_Layer: 0
   m_Name: LavaTilemap6
-  m_TagString: Untagged
+  m_TagString: LavaTilemap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9265,7 +9253,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1222850827}
-  m_RootOrder: 16
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1222443504
 MonoBehaviour:
@@ -9502,6 +9490,11 @@ Transform:
   m_Children:
   - {fileID: 21743062}
   - {fileID: 1865654974}
+  - {fileID: 1730886207}
+  - {fileID: 1390491990}
+  - {fileID: 835533199}
+  - {fileID: 883918856}
+  - {fileID: 1222443503}
   - {fileID: 1738953281}
   - {fileID: 686678510}
   - {fileID: 1223511577}
@@ -9512,11 +9505,6 @@ Transform:
   - {fileID: 368873313}
   - {fileID: 587871496}
   - {fileID: 455436371}
-  - {fileID: 1730886207}
-  - {fileID: 1390491990}
-  - {fileID: 835533199}
-  - {fileID: 883918856}
-  - {fileID: 1222443503}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9553,7 +9541,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1222850827}
-  m_RootOrder: 4
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &1223511578
 TilemapCollider2D:
@@ -9978,7 +9966,7 @@ MonoBehaviour:
   startPositionX: 0
   startPositionY: 0
   checkPoints: []
-  text: {fileID: 49129641}
+  text: {fileID: 1097749179}
   isDead: 0
   flashLength: 0.5
   flashCounter: 0
@@ -10115,6 +10103,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 8.248983
       objectReference: {fileID: 0}
+    - target: {fileID: -213367458158809389, guid: 902906532cbaded429d3b45358923278,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -213367458158809389, guid: 902906532cbaded429d3b45358923278,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -213367458158809389, guid: 902906532cbaded429d3b45358923278,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -89.162
+      objectReference: {fileID: 0}
     - target: {fileID: 2086758338109042579, guid: 902906532cbaded429d3b45358923278,
         type: 3}
       propertyPath: m_TagString
@@ -10223,7 +10226,7 @@ GameObject:
   - component: {fileID: 1390491991}
   m_Layer: 0
   m_Name: LavaTilemap3
-  m_TagString: Untagged
+  m_TagString: LavaTilemap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10240,7 +10243,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1222850827}
-  m_RootOrder: 13
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1390491991
 MonoBehaviour:
@@ -11462,7 +11465,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1222850827}
-  m_RootOrder: 6
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &1658080487
 TilemapCollider2D:
@@ -11730,7 +11733,7 @@ GameObject:
   - component: {fileID: 1730886208}
   m_Layer: 0
   m_Name: LavaTilemap2
-  m_TagString: Untagged
+  m_TagString: LavaTilemap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11747,7 +11750,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1222850827}
-  m_RootOrder: 12
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1730886208
 MonoBehaviour:
@@ -12101,7 +12104,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1222850827}
-  m_RootOrder: 2
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &1738953282
 TilemapCollider2D:
@@ -12539,7 +12542,7 @@ GameObject:
   - component: {fileID: 1865654978}
   m_Layer: 8
   m_Name: LavaTilemap
-  m_TagString: Untagged
+  m_TagString: LavaTilemap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13402,7 +13405,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1222850827}
-  m_RootOrder: 8
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &1957882068
 TilemapCollider2D:
@@ -13855,7 +13858,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1222850827}
-  m_RootOrder: 7
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &2047745889
 TilemapCollider2D:

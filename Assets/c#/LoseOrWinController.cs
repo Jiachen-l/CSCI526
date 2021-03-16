@@ -32,12 +32,19 @@ public class LoseOrWinController : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        startPositionX = GameObject.Find("XRpro").transform.position.x;
-        startPositionY = GameObject.Find("XRpro").transform.position.y;
+    {   if (GameObject.Find("XRpro") != null)
+        {
+            startPositionX = GameObject.Find("XRpro").transform.position.x;
+            startPositionY = GameObject.Find("XRpro").transform.position.y;
 
-        bodySprite = GameObject.Find("Body").GetComponent<SpriteRenderer>();
-        headSprite = GameObject.Find("Head").GetComponent<SpriteRenderer>();
+            bodySprite = GameObject.Find("Body").GetComponent<SpriteRenderer>();
+            headSprite = GameObject.Find("Head").GetComponent<SpriteRenderer>();
+        }
+        if (GameObject.Find("XR") != null)
+        {
+            startPositionX = GameObject.Find("XR").transform.position.x;
+            startPositionY = GameObject.Find("XR").transform.position.y;
+        }
         checkPoints = GameObject.FindGameObjectsWithTag("CheckPoints");
         
         playerHealth = ApplicationData.playerlives;
@@ -48,29 +55,32 @@ public class LoseOrWinController : MonoBehaviour
     void Update()
     {
         if (flashActive)
-        {
-            if (flashCounter > flashLength * .66f)
+        {   
+            if (GameObject.Find("XRpro") != null)
             {
-                bodySprite.color = Color.red;
-                headSprite.color = Color.red;
+                if (flashCounter > flashLength * .66f)
+                {
+                    bodySprite.color = Color.red;
+                    headSprite.color = Color.red;
+                }
+                else if (flashCounter > flashLength * .33f)
+                {
+                    bodySprite.color = Color.white;
+                    headSprite.color = Color.white;
+                }
+                else if (flashCounter > 0f)
+                {
+                    bodySprite.color = Color.red;
+                    headSprite.color = Color.red;
+                }
+                else
+                {
+                    bodySprite.color = Color.white;
+                    headSprite.color = Color.white;
+                    flashActive = false;
+                }
+                flashCounter -= Time.deltaTime;
             }
-            else if (flashCounter > flashLength * .33f)
-            {
-                bodySprite.color = Color.white;
-                headSprite.color = Color.white;
-            }
-            else if (flashCounter > 0f)
-            {
-                bodySprite.color = Color.red;
-                headSprite.color = Color.red;
-            }
-            else
-            {
-                bodySprite.color = Color.white;
-                headSprite.color = Color.white;
-                flashActive = false;
-            }
-            flashCounter -= Time.deltaTime;
         }
 
         if (playerHealth <= 0 && !isDead)
@@ -125,9 +135,9 @@ public class LoseOrWinController : MonoBehaviour
     }
 
     private bool checkDamage(Collision2D other)
-    {
-        if (other.gameObject.name == "LavaTilemap" && (this.gameObject.name == "bone_3" || this.gameObject.name == "bone_4"))
-        {
+    {   
+        if (other.gameObject.tag == "LavaTilemap" && (this.gameObject.name.ToString() == "XR" || this.gameObject.name.ToString() == "bone_1" || this.gameObject.name.ToString() == "bone_3" || this.gameObject.name.ToString() == "bone_4"))
+        {   
             return false;
         }
         else
@@ -167,7 +177,7 @@ public class LoseOrWinController : MonoBehaviour
 
         if (character.transform.position.x < checkPoints[0].transform.position.x)
         {
-            character.transform.position = new Vector3(startPositionX, startPositionY);
+            character.transform.position = new Vector3(startPositionX, startPositionY + 1f);
             return;
         }
 
