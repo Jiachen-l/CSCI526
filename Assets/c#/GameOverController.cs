@@ -50,11 +50,12 @@ public class GameOverController : MonoBehaviour
     public void RestartFromCheckPoint()
     {
         Debug.Log("score" + ApplicationData.coins);
-        if (ApplicationData.coins > 0)
+        if (ScoreManager.coin > 0)
         {
             Scene scene = SceneManager.GetActiveScene();
             LoseOrWinController.playerHealth = 1;
             ApplicationData.coins--;
+            ScoreManager.coin--;
             gameOverMenu.SetActive(false);
             retryButton.SetActive(true);
             pauseButton.SetActive(true);

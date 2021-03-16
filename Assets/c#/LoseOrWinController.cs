@@ -177,7 +177,7 @@ public class LoseOrWinController : MonoBehaviour
 
         if (character.transform.position.x < checkPoints[0].transform.position.x)
         {
-            character.transform.position = new Vector3(startPositionX, startPositionY + 1f);
+            character.transform.position = new Vector3(startPositionX, startPositionY + 5.0f);
             return;
         }
 
