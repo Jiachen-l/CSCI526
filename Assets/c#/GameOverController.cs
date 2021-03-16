@@ -54,7 +54,7 @@ public class GameOverController : MonoBehaviour
         {
             Scene scene = SceneManager.GetActiveScene();
             LoseOrWinController.playerHealth = 1;
-            ApplicationData.coins--;
+            ApplicationData.coinsLeftThisLevel--;
             ScoreManager.coin--;
             gameOverMenu.SetActive(false);
             retryButton.SetActive(true);
