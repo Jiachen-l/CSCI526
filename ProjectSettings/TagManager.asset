@@ -11,6 +11,7 @@ TagManager:
   - CheckPoints
   - hammer_enemy
   - fan_enemy
+  - LavaTilemap
   layers:
   - Default
   - TransparentFX
