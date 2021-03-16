@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -194, y: 39}
-  m_SizeDelta: {x: 80, y: 36.35028}
+  m_AnchoredPosition: {x: -224, y: 44}
+  m_SizeDelta: {x: 98.809204, y: 57.17508}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &377821569
 CanvasRenderer:
@@ -66,12 +66,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -4743,7 +4743,7 @@ MonoBehaviour:
     2.Be
     careful of gaps and steps. Avoid obstacles.
 
-    4.Click icons in the right:
+    3.Click icons in the right:
     Fan and hammer can remove enemies. Elixir of health can give you more health.
 
     Have

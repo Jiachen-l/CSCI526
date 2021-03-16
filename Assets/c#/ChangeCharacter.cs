@@ -6,6 +6,7 @@ public class ChangeCharacter : MonoBehaviour
 {   
     public GameObject changeCharacterObject;
     public GameObject[] characterCollection;
+    public GameObject changeIntroduction;
     static public int characterIndex;
 
     public bool changeCharacterActive;
@@ -68,6 +69,7 @@ public class ChangeCharacter : MonoBehaviour
             }
 
             changeCharacterActive = false;
+            changeIntroduction.SetActive(true);
 		}
 
 	}

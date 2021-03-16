@@ -11,6 +11,7 @@ public class Coin : MonoBehaviour
         {   
             ScoreManager.instance.ChangeScore(coinValue);
             ApplicationData.coinsGetThisLevel++;
+            ApplicationData.coinsLeftThisLevel++;
             Destroy(this.gameObject);
         }
     }

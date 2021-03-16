@@ -216,6 +216,7 @@ public class LoseOrWinController : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
         ApplicationData.TimeToPassLevel = Time.time - ApplicationData.levelStartTime;
+        ApplicationData.coins += ApplicationData.coinsLeftThisLevel;
         AnalyticsResult ana = Analytics.CustomEvent(
             scene.name,
             new Dictionary<string, object> {

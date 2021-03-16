@@ -13,6 +13,6 @@ public class IntroductionController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Destroy(this.gameObject, 7f);
+        
     }
 }

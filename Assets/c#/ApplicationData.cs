@@ -22,6 +22,9 @@ public class ApplicationData
 	//record the coins this player has
 	static public int coins = 0;
 
+	//record the coins this player will get at the end of this level(minus the coins he/she has used)
+	static public int coinsLeftThisLevel = 0;
+
 	//record the coins this player get at this level
 	static public int coinsGetThisLevel = 0;
 

@@ -64,7 +64,7 @@ public class WinMenuController : MonoBehaviour
         ApplicationData.TimeFallIntoGap = 0;
         ApplicationData.levelTryTime = 1;
         ApplicationData.levelStartTime = Time.time;
-        ApplicationData.coins += ApplicationData.coinsGetThisLevel;
+        // ApplicationData.coins += ApplicationData.coinsGetThisLevel;
         ApplicationData.coinsGetThisLevel = 0;
 
     	SceneManager.LoadScene(scene.buildIndex + 1);
