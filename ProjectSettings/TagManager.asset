@@ -12,6 +12,7 @@ TagManager:
   - hammer_enemy
   - fan_enemy
   - LavaTilemap
+  - screenShake
   layers:
   - Default
   - TransparentFX
