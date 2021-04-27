@@ -29,10 +29,18 @@ public class LoseOrWinController : MonoBehaviour
     public float flashLength = 0.5f;
     public float flashCounter;
 
+    private bool invisble = false;
+    public float invisible_time = 3.0f;
+    private float invisible_timer = 0f;
+
+    private Rigidbody2D rb;
+
 
     // Start is called before the first frame update
     void Start()
-    {   if (GameObject.Find("XRpro") != null)
+    {   
+        rb = GetComponent<Rigidbody2D>();
+        if (GameObject.Find("XRpro") != null)
         {
             startPositionX = GameObject.Find("XRpro").transform.position.x;
             startPositionY = GameObject.Find("XRpro").transform.position.y;
@@ -54,6 +62,12 @@ public class LoseOrWinController : MonoBehaviour
 
     void Update()
     {
+        if (invisble) {
+            invisible_timer -= Time.deltaTime;
+            if (invisible_timer < 0) {
+                invisble = false;
+            }
+        }
         if (flashActive)
         {   
             if (GameObject.Find("XRpro") != null)
@@ -115,10 +129,12 @@ public class LoseOrWinController : MonoBehaviour
 
         if (other.gameObject.GetComponent<LoseCondition>() != null)
         {
-            ApplicationData.TimeHitObstacle++;
-            if (checkDamage(other))
-            {
-                damage(other, 1);
+            if (!invisble) {
+                ApplicationData.TimeHitObstacle++;
+                if (checkDamage(other))
+                {
+                    damage(other, 1);
+                }
             }
         }
 
@@ -131,6 +147,16 @@ public class LoseOrWinController : MonoBehaviour
         {
             ApplicationData.TimeFallIntoGap++;
             damage(other, 1);
+        }
+
+        if (other.gameObject.GetComponent<EnermyBonus>() != null) {
+            rb.velocity = 1.1f * Vector2.up * 3;
+            GameObject.Find("TurtleAndPotion").GetComponent<EnermyChangeController>().changeCharacterActive = true;
+        }
+        if (other.gameObject.GetComponent<InvisibleCondition>() != null) {
+            invisble = true;
+            invisible_timer = invisible_time;
+            other.gameObject.SetActive(false);
         }
     }
 
