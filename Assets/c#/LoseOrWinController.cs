@@ -30,7 +30,7 @@ public class LoseOrWinController : MonoBehaviour
     public float flashCounter;
 
     private bool invisble = false;
-    public float invisible_time = 3.0f;
+    private float invisible_time = 10.0f;
     private float invisible_timer = 0f;
 
     private Rigidbody2D rb;
