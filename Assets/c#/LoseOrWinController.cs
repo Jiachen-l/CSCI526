@@ -151,7 +151,7 @@ public class LoseOrWinController : MonoBehaviour
 
         if (other.gameObject.GetComponent<EnermyBonus>() != null) {
             rb.velocity = 1.1f * Vector2.up * 3;
-            GameObject.Find("TurtleAndPotion").GetComponent<EnermyChangeController>().changeCharacterActive = true;
+            GameObject.Find("TurtleAndClover").GetComponent<EnermyChangeController>().changeCharacterActive = true;
         }
         if (other.gameObject.GetComponent<InvisibleCondition>() != null) {
             invisble = true;
