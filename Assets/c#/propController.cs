@@ -5,9 +5,10 @@ using UnityEngine;
 public class propController : MonoBehaviour
 {
     // Start is called before the first frame update
+    private shake shake_controller;
     void Start()
     {
-        
+        shake_controller = GameObject.FindGameObjectWithTag("screenShake").GetComponent<shake>();
     }
 
     // Update is called once per frame
@@ -50,7 +51,9 @@ public class propController : MonoBehaviour
     {
         //for test only
         //ScoreManager.instance.ChangeHammer(5);
+        
         if (ScoreManager.instance.GetHammer() > 0) {
+            shake_controller.can_shake();
             ScoreManager.instance.ChangeHammer(-1);
             GameObject[] objs = GameObject.FindGameObjectsWithTag("fan_enemy");
             Debug.Log(objs.Length.ToString());
