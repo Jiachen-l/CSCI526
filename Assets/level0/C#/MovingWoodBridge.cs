@@ -58,7 +58,12 @@ public class MovingWoodBridge : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        player.gravityScale = 3;
-        onMovingBridge = false;
+        if (other.GetComponent<Rigidbody2D>() == player)
+        {
+            player.gravityScale = 3;
+            onMovingBridge = false;
+        }
+
+        
     }
 }
