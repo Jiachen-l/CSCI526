@@ -51,7 +51,7 @@ public class propController : MonoBehaviour
     {
         //for test only
         //ScoreManager.instance.ChangeHammer(5);
-        
+        //shake_controller.can_shake();
         if (ScoreManager.instance.GetHammer() > 0) {
             shake_controller.can_shake();
             ScoreManager.instance.ChangeHammer(-1);
