@@ -21,7 +21,7 @@ public class ChangeCharacter : MonoBehaviour
             characterCollection[i].gameObject.SetActive(false);
         }
 
-        changeCharacterActive = false;
+        changeCharacterActive = false;   
     }
 
     // Update is called once per frame
@@ -32,7 +32,8 @@ public class ChangeCharacter : MonoBehaviour
 
     void ChangeCharacterFunction()
 	{
-		if (changeCharacterActive)
+        // Debug.Log("changeCharacterActive: " + changeCharacterActive);
+		if (changeCharacterActive && Input.GetKeyUp(KeyCode.Tab))
 		{   
             // move all characters' position to one position
             for (int i = 0; i < characterCollection.Length; i++)
@@ -68,7 +69,6 @@ public class ChangeCharacter : MonoBehaviour
                 GameObject.Find("Main Camera").GetComponent<CameraColtroller>().target2 = GameObject.Find("XRpro").transform;
             }
 
-            changeCharacterActive = false;
             changeIntroduction.SetActive(true);
 		}
 

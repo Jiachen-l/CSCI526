@@ -17,9 +17,7 @@ public class ChangeCharacterTrigger : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-		if (other.gameObject.name == "XRpro") {
       GameObject.Find("ChangeCharacter").GetComponent<ChangeCharacter>().changeCharacterActive = true;
       bool changeCharacterActive = GameObject.Find("ChangeCharacter").GetComponent<ChangeCharacter>().changeCharacterActive;
-		}
 	}
 }
