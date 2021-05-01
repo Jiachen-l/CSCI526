@@ -6,6 +6,8 @@ public class propController : MonoBehaviour
 {
     // Start is called before the first frame update
     private shake shake_controller;
+    public GameObject fan_anim;
+    public GameObject wind;
     void Start()
     {
         shake_controller = GameObject.FindGameObjectWithTag("screenShake").GetComponent<shake>();
@@ -35,6 +37,7 @@ public class propController : MonoBehaviour
         //for test only
         //ScoreManager.instance.ChangeFan(5);
         if (ScoreManager.instance.GetFan() > 0) {
+            showFan();
             ScoreManager.instance.ChangeFan(-1);
             GameObject[] objs = GameObject.FindGameObjectsWithTag("fan_enemy");
             Debug.Log(objs.Length.ToString());
@@ -72,5 +75,16 @@ public class propController : MonoBehaviour
         }
         
         //Debug.Log("increment health");
+    }
+
+    public void showFan() {
+        fan_anim.SetActive(true);
+        wind.SetActive(true);
+        Invoke("hideFan",1f);
+    }
+
+    public void hideFan() {
+        fan_anim.SetActive(false);
+        wind.SetActive(false);
     }
 }
