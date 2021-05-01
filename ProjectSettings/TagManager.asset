@@ -13,6 +13,7 @@ TagManager:
   - fan_enemy
   - LavaTilemap
   - screenShake
+  - fan
   layers:
   - Default
   - TransparentFX
