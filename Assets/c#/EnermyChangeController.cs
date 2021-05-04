@@ -15,8 +15,8 @@ public class EnermyChangeController : MonoBehaviour
     private SpriteRenderer headSprite;
 
     private bool flashActive;
-    public float flashLength = 0.5f;
-    public float flashCounter;
+    private float flashLength = 8.0f;
+    private float flashCounter;
     void Start()
     {
         if (GameObject.Find("XRpro") != null)
@@ -138,21 +138,27 @@ public class EnermyChangeController : MonoBehaviour
                     bodySprite.color = Color.green;
                     headSprite.color = Color.green;
                 }
+                else if (flashCounter > 0f)
+                {
+                    bodySprite.color = Color.green;
+                    headSprite.color = Color.green;
+                }
                 else
                 {
                     bodySprite.color = Color.white;
                     headSprite.color = Color.white;
                     flashActive = false;
                 }
+
                 flashCounter -= Time.deltaTime;
             }
         }
     }
 
     void ChangeCharacterFunction()
-	{
-		if (changeCharacterActive)
-		{   
+    {
+        if (changeCharacterActive)
+        {
             // move all characters' position to one position
             // for (int i = 0; i < characterCollection.Length; i++)
             // {   
@@ -167,11 +173,11 @@ public class EnermyChangeController : MonoBehaviour
             // changeCharacterObject.transform.position = characterCollection[characterIndex].transform.position;
 
             // switch character by switching character index
-			characterIndex_2++;
-			if(characterIndex_2 >= characterCollection.Length)
-			{
-				characterIndex_2 = 0;
-			}
+            characterIndex_2++;
+            if (characterIndex_2 >= characterCollection.Length)
+            {
+                characterIndex_2 = 0;
+            }
             for (int i = 0; i < characterCollection.Length; ++i)
             {
                 characterCollection[i].gameObject.SetActive(false);
